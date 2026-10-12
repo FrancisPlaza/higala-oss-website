@@ -1,0 +1,42 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PrimaryAction from '../components/PrimaryAction.astro';
+import ArrowLink from '../components/ArrowLink.astro';
+const description = 'Read a date-neutral view of Higala intended scope, separate optional services, and capabilities requiring additional decisions or integrations.';
+---
+<SiteLayout title="Roadmap" description={description}>
+  <section class="page-hero container">
+    <div class="page-hero-grid">
+      <div><h1>Make the next decisions visible.</h1></div>
+      <div><p>This roadmap separates the intended open release from optional extensions and work that needs additional definition.</p></div>
+    </div>
+  </section>
+
+  <section class="prose-section" aria-labelledby="intended-title">
+    <div class="container prose-grid">
+      <h2 id="intended-title">Intended open release</h2>
+      <div class="prose-copy">
+        <p>The planned open scope includes these connected components:</p>
+        <ul><li>Double-entry ledger for internal money movement</li><li>Staff workspace</li><li>Usable open reference loan engine</li><li>Customer starter</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="prose-section" aria-labelledby="separate-title">
+    <div class="container prose-grid">
+      <h2 id="separate-title">Separate decisions and integrations</h2>
+      <div class="prose-copy">
+        <p>Talino's commercial loan engine is an optional extension and is not required by the intended open release.</p>
+        <p>The initial core is internal and closed-loop. Each institution needs to define payment integrations, migration, operations, access controls, monitoring, backups, and required evidence for its own setting.</p>
+        <ArrowLink href="/resources/road-ahead">Read the road ahead</ArrowLink>
+      </div>
+    </div>
+  </section>
+
+  <section class="prose-section" aria-labelledby="follow-roadmap-title">
+    <div class="container prose-grid">
+      <h2 id="follow-roadmap-title">Prepare for a closer review.</h2>
+      <div class="prose-copy"><p>Institutions can write down the systems, workflows, and controls they need. Developers can review the intended component relationships and note the evidence needed before working from a release.</p><div class="action-row"><PrimaryAction href="/institutions">Institution evaluation</PrimaryAction><PrimaryAction href="/developers">Developer resources</PrimaryAction></div></div>
+    </div>
+  </section>
+</SiteLayout>

@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+npm-debug.log*
+
+# Local alternate copies retained outside version control.
+src/scripts/hero-motion 2.ts
+src/scripts/loan-stages 2.ts
+src/components/illustrations/LoanJourney 2.astro

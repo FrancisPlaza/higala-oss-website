@@ -1,0 +1,23 @@
+---
+import { getCollection, render } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import ArrowLink from '../../components/ArrowLink.astro';
+
+export async function getStaticPaths() {
+  const entries = (await getCollection('resources')).filter((entry) => !entry.data.draft);
+  return entries.map((entry) => ({ params: { slug: entry.id.replace(/\.mdx?$/, '') }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+<SiteLayout title={entry.data.title} description={entry.data.description} activePath="/resources">
+  <article class="container page-hero">
+    <header class="article-header">
+      <h1>{entry.data.title}</h1>
+      <p>{entry.data.description}</p>
+    </header>
+    <div class="article-body"><Content /></div>
+    <div class="article-back"><ArrowLink href="/resources">Back to resources</ArrowLink></div>
+  </article>
+</SiteLayout>

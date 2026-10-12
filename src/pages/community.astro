@@ -1,0 +1,49 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PrimaryAction from '../components/PrimaryAction.astro';
+import ArrowLink from '../components/ArrowLink.astro';
+const description = 'Learn about Talino stewardship and the code, documentation, testing, and banking workflow contributions that can help Higala.';
+---
+<SiteLayout title="Community" description={description}>
+  <section class="page-hero container">
+    <div class="page-hero-grid">
+      <div><h1>Stewarded by Talino. Open to contribution.</h1></div>
+      <div><p>Talino stewards Higala, and the project welcomes practical contributions across software and banking work.</p></div>
+    </div>
+  </section>
+
+  <section class="prose-section" aria-labelledby="participate-title">
+    <div class="container prose-grid">
+      <h2 id="participate-title">Bring experience that makes the system clearer.</h2>
+      <div class="prose-copy">
+        <div class="capability-list">
+          <article class="capability-item"><h3>Code</h3><p>Help improve the platform as public source and contribution guidance become available.</p></article>
+          <article class="capability-item"><h3>Documentation</h3><p>Explain concepts, workflows, operating choices, and limitations in language teams can use.</p></article>
+          <article class="capability-item"><h3>Testing</h3><p>Check workflows, edge cases, access controls, and the evidence institutions need.</p></article>
+          <article class="capability-item"><h3>Banking workflows</h3><p>Share operational knowledge that can help teams evaluate how the components fit together.</p></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prose-section" aria-labelledby="stewardship-role-title">
+    <div class="container prose-grid">
+      <h2 id="stewardship-role-title">Understand stewardship and services.</h2>
+      <div class="prose-copy">
+        <p>Talino offers optional implementation, hosting, and support services. Hosting, migration, and other work can carry separate costs.</p>
+        <p>The commercial loan engine is a separate optional extension. It is not required by the intended open release.</p>
+        <ArrowLink href="/support">Find support options</ArrowLink>
+      </div>
+    </div>
+  </section>
+
+  <section class="prose-section" aria-labelledby="follow-title">
+    <div class="container prose-grid">
+      <h2 id="follow-title">Follow the intended scope.</h2>
+      <div class="prose-copy">
+        <p>The resources below explain the proposed open release, the work that needs definition, and questions an institution or developer can prepare while evaluating the project.</p>
+        <div class="action-row"><PrimaryAction href="/resources">Browse project resources</PrimaryAction><PrimaryAction href="/roadmap">Read the roadmap</PrimaryAction></div>
+      </div>
+    </div>
+  </section>
+</SiteLayout>

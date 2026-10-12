@@ -1,0 +1,48 @@
+---
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { withBase } from '../lib/urls';
+
+interface Props {
+  title: string;
+  description: string;
+  activePath?: string;
+}
+
+const { title, description, activePath = Astro.url.pathname } = Astro.props;
+const pageTitle = title === 'Higala' ? 'Higala | Open-source core banking' : `${title} | Higala`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" type="image/svg+xml" href={withBase('/brand/higala-logo-teal.svg')} />
+    <link rel="preload" href={withBase('/fonts/bricolage-latin.woff2')} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={withBase('/fonts/archivo-latin.woff2')} as="font" type="font/woff2" crossorigin />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <SiteHeader activePath={activePath} />
+    <main id="main">
+      <slot />
+    </main>
+    <SiteFooter />
+    <script>
+      import '../scripts/site-navigation.ts';
+    </script>
+    <script>
+      import '../scripts/hero-motion.ts';
+    </script>
+    <script>
+      import '../scripts/loan-stages.ts';
+    </script>
+  </body>
+</html>

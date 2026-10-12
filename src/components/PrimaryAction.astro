@@ -1,0 +1,8 @@
+---
+import { withBase } from '../lib/urls';
+const { href, variant = 'primary' } = Astro.props;
+---
+<a class:list={['button', `button-${variant}`]} href={withBase(href)}>
+  <span><slot /></span>
+  <svg viewBox="0 0 22 12" aria-hidden="true"><path d="M1 6h18m-6-5 6 5-6 5" /></svg>
+</a>

@@ -1,0 +1,74 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PrimaryAction from '../components/PrimaryAction.astro';
+import ArrowLink from '../components/ArrowLink.astro';
+
+const description = 'See the intended scope of Higala: a double-entry ledger, staff workspace, usable open reference loan engine, and customer starter.';
+const capabilities = [
+  ['Accounts and ledger', 'Record internal money movement in a double-entry ledger.', 'Intended open release'],
+  ['Banking operations', 'Give staff a workspace to prepare and review customer activity.', 'Intended open release'],
+  ['Lending', 'Use an open reference engine for a principal schedule and lending workflow.', 'Intended open release'],
+  ['Customer access', 'Adapt a mobile starter to your institution and its supported services.', 'Intended open release'],
+];
+---
+<SiteLayout title="Platform" description={description}>
+  <section class="page-hero container">
+    <div class="page-hero-grid">
+      <div><h1>A connected core for internal banking.</h1></div>
+      <div><p>Higala's intended open release connects customer requests, staff review, a reference loan calculation, and a double-entry record within an initial internal, closed-loop core.</p></div>
+    </div>
+  </section>
+
+  <section class="prose-section" aria-labelledby="components-title">
+    <div class="container prose-grid">
+      <h2 id="components-title">Intended components</h2>
+      <div class="prose-copy">
+        <div class="capability-list">
+          {capabilities.map(([name, details, status]) => (
+            <article class="capability-item"><h3>{name}</h3><p>{details}<small>{status}</small></p></article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prose-section" id="lending" aria-labelledby="workflow-title">
+    <div class="container prose-grid">
+      <h2 id="workflow-title">Follow one illustrative loan.</h2>
+      <div class="prose-copy">
+        <p>Mara Santos requests ₱12,000 from Sulong Cooperative. Iris Reyes prepares the request; Nico Cruz reviews it. The reference schedule divides principal into three equal ₱4,000 parts.</p>
+        <ol class="step-list">
+          <li><div><strong>Request</strong><span>The customer starter shows an illustrative application.</span></div></li>
+          <li><div><strong>Review</strong><span>Staff prepare and review the request before disbursement.</span></div></li>
+          <li><div><strong>Disburse</strong><span>Debit loan receivable and credit customer deposits for ₱12,000.</span></div></li>
+          <li><div><strong>Repay</strong><span>After a ₱4,000 principal payment, ₱8,000 remains. Record debit customer deposits and credit loan receivable for ₱4,000.</span></div></li>
+        </ol>
+        <p class="callout">The example is illustrative. It models principal only, with no interest or fees.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="prose-section" id="operations" aria-labelledby="boundaries-title">
+    <div class="container prose-grid">
+      <h2 id="boundaries-title">Know the boundaries.</h2>
+      <div class="prose-copy">
+        <div class="split-callouts">
+          <div><h3>Intended open scope</h3><p>Ledger, staff workspace, usable open reference loan engine, and customer starter.</p></div>
+          <div><h3>Optional extension</h3><p>Talino's commercial loan engine is a separate optional extension. The intended open release does not require it.</p></div>
+        </div>
+        <p id="customer-access">Institutions should evaluate their own integrations, controls, operating model, and regulatory obligations against their requirements.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="prose-section" aria-labelledby="next-steps-title">
+    <div class="container prose-grid">
+      <h2 id="next-steps-title">Choose a next step.</h2>
+      <div class="prose-copy">
+        <p>Institutions can use the preparation guide to gather evaluation questions. Developers can review the intended component relationships and contribution paths.</p>
+        <div class="action-row"><PrimaryAction href="/institutions">Plan your evaluation</PrimaryAction><PrimaryAction href="/developers">Developer resources</PrimaryAction></div>
+        <ArrowLink href="/resources/intended-open-release">Read the intended open release</ArrowLink>
+      </div>
+    </div>
+  </section>
+</SiteLayout>

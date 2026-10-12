@@ -1,0 +1,51 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PrimaryAction from '../components/PrimaryAction.astro';
+import ArrowLink from '../components/ArrowLink.astro';
+const description = 'Review the intended Higala components, current preparation state, architecture boundaries, and ways to contribute as a developer.';
+---
+<SiteLayout title="Developers" description={description}>
+  <section class="page-hero container">
+    <div class="page-hero-grid">
+      <div><h1>Understand the pieces before you build.</h1></div>
+      <div><p>Higala is preparing an open release for developers who want to inspect the architecture, follow the work, and help shape the project.</p><div class="status-note">Explore the intended release; source code and setup guides will be linked when available.</div></div>
+    </div>
+  </section>
+
+  <section class="prose-section" aria-labelledby="release-state-title">
+    <div class="container prose-grid">
+      <h2 id="release-state-title">What is intended to be open?</h2>
+      <div class="prose-copy">
+        <div class="capability-list">
+          <article class="capability-item"><h3>Ledger</h3><p>Double-entry records for internal money movement.<small>Intended open release</small></p></article>
+          <article class="capability-item"><h3>Staff workspace</h3><p>A workspace for preparing and reviewing banking activity.<small>Intended open release</small></p></article>
+          <article class="capability-item"><h3>Reference loan engine</h3><p>A usable open reference engine for calculating principal schedules.<small>Intended open release</small></p></article>
+          <article class="capability-item"><h3>Customer starter</h3><p>A mobile starting point for institution-specific customer access.<small>Intended open release</small></p></article>
+        </div>
+        <p>The commercial loan engine is an optional extension. Initial intended scope focuses on internal, closed-loop activity.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="prose-section" aria-labelledby="architecture-title">
+    <div class="container prose-grid">
+      <h2 id="architecture-title">A workflow joins the components.</h2>
+      <div class="prose-copy">
+        <p>An illustrative path starts with Mara Santos requesting ₱12,000 from Sulong Cooperative. A staff member prepares the request, a second staff member reviews it, and the reference engine shows three equal ₱4,000 principal components.</p>
+        <p>On disbursement, the example records debit loan receivable and credit customer deposits for ₱12,000. After one principal payment, ₱8,000 remains; repayment records debit customer deposits and credit loan receivable for ₱4,000.</p>
+        <p>This illustrative example models principal only, with no interest or fees.</p>
+        <ArrowLink href="/platform#lending" tone="blue">See the illustrative workflow</ArrowLink>
+      </div>
+    </div>
+  </section>
+
+  <section class="prose-section" aria-labelledby="contribute-title">
+    <div class="container prose-grid">
+      <h2 id="contribute-title">Help shape the work.</h2>
+      <div class="prose-copy">
+        <p>Useful contributions include code, documentation, testing, and banking workflow knowledge. Trace a workflow, note its assumptions, and identify what a shared implementation needs to support.</p>
+        <div class="action-row"><PrimaryAction href="/community">Community and stewardship</PrimaryAction><PrimaryAction href="/resources">Project resources</PrimaryAction></div>
+      </div>
+    </div>
+  </section>
+</SiteLayout>

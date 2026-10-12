@@ -1,0 +1,69 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PrimaryAction from '../components/PrimaryAction.astro';
+import ArrowLink from '../components/ArrowLink.astro';
+const description = 'Plan an evaluation of Higala for a rural bank or cooperative, including fit, operating choices, responsibilities, support, and costs.';
+---
+<SiteLayout title="For institutions" description={description}>
+  <section class="page-hero container">
+    <div class="page-hero-grid">
+      <div><h1>Plan an evaluation around your needs.</h1></div>
+      <div><p>Use the intended scope to frame an evaluation. Check fit, operating responsibilities, integration needs, controls, and the evidence your institution requires.</p><div class="status-note">The initial core focuses on internal, closed-loop activity.</div></div>
+    </div>
+  </section>
+
+  <section class="prose-section" aria-labelledby="fit-title">
+    <div class="container prose-grid">
+      <h2 id="fit-title">Start with fit and requirements.</h2>
+      <div class="prose-copy">
+        <p>Higala is being prepared for rural banks and cooperatives that want to inspect and adapt core banking technology, with a team ready to evaluate the work involved.</p>
+        <ul>
+          <li>Which account, lending, and staff workflows must be supported?</li>
+          <li>What systems, data, payment providers, or reporting tools need to connect?</li>
+          <li>Who will own infrastructure, access controls, backups, monitoring, and support?</li>
+          <li>What approvals, testing, and evidence does your institution require?</li>
+        </ul>
+        <p>External rails, integrations, operating controls, and regulatory obligations need evaluation against your institution's requirements.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="prose-section" aria-labelledby="evaluation-title">
+    <div class="container prose-grid">
+      <h2 id="evaluation-title">A practical evaluation sequence.</h2>
+      <div class="prose-copy">
+        <ol class="step-list">
+          <li><div><strong>Map a workflow</strong><span>Choose an internal account or lending process and describe the users, approvals, and records it requires.</span></div></li>
+          <li><div><strong>Check the intended scope</strong><span>Compare the ledger, staff workspace, reference loan engine, and customer starter against that workflow.</span></div></li>
+          <li><div><strong>List the gaps</strong><span>Identify integrations, migration work, controls, operating tasks, and support that are not covered by the intended scope.</span></div></li>
+          <li><div><strong>Choose how to proceed</strong><span>Decide what your team can operate and where an implementation partner or optional Talino service would help.</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="prose-section" id="ways-to-adopt" aria-labelledby="adoption-title">
+    <div class="container prose-grid">
+      <h2 id="adoption-title">Choose an operating approach.</h2>
+      <div class="prose-copy">
+        <div class="split-callouts">
+          <div><h3>Open software</h3><p>The intended open components carry no software licence fee. Your institution can inspect and adapt them.</p></div>
+          <div><h3>Optional services</h3><p>Talino offers implementation, hosting, and support services. Hosting, migration, third-party services, and optional modules have separate costs.</p></div>
+        </div>
+        <p>Talino's commercial loan engine is an optional extension. The intended open release does not require buying it.</p>
+        <p>Before budgeting, confirm service availability, scope, responsibilities, and pricing with the provider.</p>
+        <ArrowLink href="/support">See support options</ArrowLink>
+      </div>
+    </div>
+  </section>
+
+  <section class="prose-section" aria-labelledby="prepare-title">
+    <div class="container prose-grid">
+      <h2 id="prepare-title">Bring the right people together.</h2>
+      <div class="prose-copy">
+        <p>An evaluation can include banking operations, finance, technology, risk, compliance, and the people responsible for customer service. Start with one workflow and document the evidence each group needs.</p>
+        <div class="action-row"><PrimaryAction href="/resources/prepare-for-evaluation">Read the preparation guide</PrimaryAction><PrimaryAction href="/platform">Review platform scope</PrimaryAction></div>
+      </div>
+    </div>
+  </section>
+</SiteLayout>

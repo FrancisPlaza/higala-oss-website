@@ -1,0 +1,189 @@
+---
+import { withBase } from '../lib/urls';
+import { getCollection } from 'astro:content';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import ArrowLink from '../components/ArrowLink.astro';
+import PrimaryAction from '../components/PrimaryAction.astro';
+import OpenCoreDiagram from '../components/illustrations/OpenCoreDiagram.astro';
+import LoanJourney from '../components/illustrations/LoanJourney.astro';
+
+const description = 'Higala is opening core banking technology to rural banks, cooperatives, and the developers building their digital services.';
+const resources = (await getCollection('resources'))
+  .filter((entry) => !entry.data.draft)
+  .sort((a, b) => a.data.order - b.data.order);
+
+---
+
+<SiteLayout title="Higala" description={description} activePath="/">
+  <section class="hero container" aria-labelledby="hero-title">
+    <div class="hero-intro">
+      <div class="hero-copy"><h1 id="hero-title"><span>Modern core banking.</span><span>Open to build on.</span></h1></div>
+      <div class="hero-aside">
+        <p class="hero-category">Open-source core banking</p>
+        <p>We're opening core banking for rural banks, cooperatives, and the developers building with them.</p>
+      </div>
+      <div class="hero-actions">
+        <PrimaryAction href="/institutions">Explore for your institution</PrimaryAction>
+        <PrimaryAction href="/developers">Explore developer resources</PrimaryAction>
+      </div>
+      <p class="steward-note">Stewarded by Talino.</p>
+    </div>
+    <OpenCoreDiagram />
+  </section>
+
+  <section class="mission section" id="mission" aria-labelledby="mission-title">
+    <div class="container mission-grid">
+      <div>
+        <h2 id="mission-title">Built for the institutions communities rely on.</h2>
+        <p class="mission-copy">Rural banks and cooperatives know their communities. Opening the technology gives their teams more room to inspect, adapt, and improve it.</p>
+        <ArrowLink href="/about#why-open">Why we're opening Higala</ArrowLink>
+      </div>
+      <div class="shared-foundation" role="group" aria-label="Rural banks, cooperatives, and builders connected to a shared foundation">
+        <div class="institution-lines">
+          <div class="institution-line">Rural banks</div>
+          <div class="institution-line">Cooperatives</div>
+          <div class="institution-line">Builders</div>
+        </div>
+        <div class="foundation"><strong>A shared<br />foundation</strong><span></span></div>
+        <p class="mission-aside">Inspect. Adapt. Contribute.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section capabilities" aria-labelledby="capabilities-title">
+    <div class="container">
+      <div class="capabilities-heading">
+        <h2 id="capabilities-title">Accounts. Operations.<br />Lending. Customer access.</h2>
+        <p>One intended open platform, from a customer request to the accounting record.</p>
+      </div>
+
+      <div class="loan-panel" id="lending">
+        <div class="loan-story">
+          <h3>A loan, from request to repayment.</h3>
+          <p>A usable open reference engine brings the calculation into the lending workflow.</p>
+          <ArrowLink href="/platform#lending" tone="blue">Explore lending</ArrowLink>
+          <small class="loan-note">Illustrative principal only.<br />Interest and fees are not shown.</small>
+        </div>
+        <LoanJourney />
+      </div>
+
+      <div class="capability-pair">
+        <article class="review-panel" id="operations">
+          <h3>Review before funds move.</h3>
+          <p>Keep preparation and approval separate, with a clear path back for changes.</p>
+          <div class="review-flow" role="img" aria-label="Iris Reyes prepares loan L-024. Nico Cruz reviews it and can approve it or return it for changes.">
+            <div class="review-step"><strong>Prepare</strong><small>Iris Reyes</small><small>Loan L-024</small></div>
+            <svg class="review-arrow" viewBox="0 0 28 14" aria-hidden="true"><path d="M1 7h25m-6-6 6 6-6 6" /></svg>
+            <div class="review-decision"><span>Review</span></div>
+            <svg class="review-arrow" viewBox="0 0 28 14" aria-hidden="true"><path d="M1 7h25m-6-6 6 6-6 6" /></svg>
+            <div class="review-step"><strong>✓ Approved</strong><small>₱12,000</small><small>To disburse</small></div>
+            <div class="review-loop" aria-hidden="true"></div>
+          </div>
+          <div class="review-flow-mobile" role="img" aria-label="Iris Reyes prepares loan L-024. Nico Cruz reviews it and can approve it or return it for changes.">
+            <div class="mobile-review-card"><strong>Prepared by Iris Reyes</strong><span>Mara Santos · Loan L-024</span></div>
+            <svg viewBox="0 0 20 22" aria-hidden="true"><path d="M10 1v18m-7-7 7 7 7-7" /></svg>
+            <div class="mobile-review-card mobile-review-check"><strong>Reviewed by Nico Cruz</strong><span>Approve or return for changes</span></div>
+            <svg viewBox="0 0 20 22" aria-hidden="true"><path d="M10 1v18m-7-7 7 7 7-7" /></svg>
+            <div class="mobile-review-result"><strong>✓ &nbsp; Ready to disburse</strong><span>₱12,000</span></div>
+          </div>
+          <ArrowLink href="/platform#operations" tone="clay">Explore banking operations</ArrowLink>
+        </article>
+
+        <article class="customer-panel" id="customer-access">
+          <h3>Your institution.<br />Your customer experience.</h3>
+          <p>Adapt the mobile starter to the people you serve.</p>
+          <div class="customer-phone" role="img" aria-label="Illustrative Sulong Cooperative mobile account for Mara Santos, showing ₱8,000 principal remaining after one of three payments.">
+            <span class="phone-speaker" aria-hidden="true"></span>
+            <strong>Sulong Cooperative</strong>
+            <h4>Hello, Mara.</h4>
+            <div class="phone-divider"></div>
+            <span class="phone-small">Your loan</span>
+            <span class="phone-balance">₱8,000</span>
+            <span class="phone-small">Principal remaining</span>
+            <div class="phone-progress" aria-hidden="true"><span></span></div>
+            <span class="phone-small">1 of 3 principal payments</span>
+            <p class="phone-paid">✓ &nbsp; ₱4,000 recorded</p>
+          </div>
+          <ArrowLink href="/platform#customer-access" tone="plum">Explore customer access</ArrowLink>
+        </article>
+      </div>
+
+      <div class="ledger-panel" id="ledger">
+        <div>
+          <h3>Every movement, a balanced record.</h3>
+          <p>Record internal money movement in a double-entry ledger.</p>
+        </div>
+        <div class="ledger-example" role="group" aria-label="Illustrative disbursement entry for loan L-024">
+          <div class="ledger-example-title">Loan disbursement · L-024</div>
+          <div class="ledger-columns">
+            <div><small>Debit</small><p>Loan<br />receivable<strong>₱12,000</strong></p></div>
+            <div><small>Credit</small><p>Customer<br />deposits<strong>₱12,000</strong></p></div>
+          </div>
+          <div class="balanced-note"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="m3 9 4 4 8-9" /></svg> Debit and credit recorded together</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="audiences container" aria-labelledby="audiences-title">
+    <h2 id="audiences-title">Find your way into Higala.</h2>
+    <div class="audience-grid">
+      <article class="audience">
+        <h3>For your institution</h3>
+        <p>Understand the capabilities, plan your evaluation, and choose how to operate the platform.</p>
+        <ul><li>Assess fit and requirements</li><li>Plan an evaluation</li><li>Choose your operating approach</li></ul>
+        <PrimaryAction href="/institutions">Plan your evaluation</PrimaryAction>
+      </article>
+      <article class="audience">
+        <h3>For developers</h3>
+        <p>Explore the intended components, understand how they fit together, and help shape what comes next.</p>
+        <ul><li>Explore the architecture</li><li>Review the intended release</li><li>Find a contribution path</li></ul>
+        <PrimaryAction href="/developers">Open the developer guide</PrimaryAction>
+      </article>
+    </div>
+  </section>
+
+  <section class="open-services" aria-labelledby="open-title">
+    <div class="container service-grid">
+      <div class="service-intro">
+        <h2 id="open-title">Open software.<br />Practical support.</h2>
+        <p class="service-lead">The intended open release includes a usable reference loan engine.</p>
+        <ArrowLink href="/institutions#ways-to-adopt" tone="light">Compare adoption options</ArrowLink>
+      </div>
+      <div class="service-details">
+        <h3>Intended open release</h3>
+        <ul class="open-list"><li>Ledger</li><li>Reference loan engine</li><li>Staff workspace</li><li>Customer starter</li></ul>
+        <hr class="service-rule" />
+        <h3>Optional Talino services</h3>
+        <p>Implementation, hosting, and support. A commercial loan engine is an optional extension.</p>
+        <div class="cost-notes"><p>Open software has no licence fee.</p><p>Hosting, migration, and optional services have separate costs.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container section stewardship" aria-labelledby="stewardship-title">
+    <div>
+      <h2 id="stewardship-title">Stewarded by Talino.<br />Open to contribution.</h2>
+      <p>Help improve the shared platform through code, documentation, testing, and banking experience.</p>
+      <ArrowLink href="/community">Meet the project</ArrowLink>
+    </div>
+    <div class="contribution-list" aria-label="Ways to contribute"><span>Code</span><span>Documentation</span><span>Testing</span><span>Banking workflows</span></div>
+  </section>
+
+  <section class="resources section" aria-labelledby="resources-title">
+    <div class="container resources-grid">
+      <div class="resources-intro">
+        <h2 id="resources-title">Follow the project as it grows.</h2>
+        <p>Explore the intended release and the work ahead.</p>
+      </div>
+      <div class="resource-list">
+        {resources.map((resource) => (
+          <a class="resource-row" href={withBase(`/resources/${resource.id.replace(/\.mdx?$/, '')}`)}>
+            <span><span class="resource-title">{resource.data.title}</span><span class="resource-description">{resource.data.description}</span></span>
+            <svg viewBox="0 0 22 12" aria-hidden="true"><path d="M1 6h18m-6-5 6 5-6 5" /></svg>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</SiteLayout>

@@ -1,0 +1,63 @@
+<div class="principal-graph-wrap" data-loan-journey data-stage="repay" data-enhanced="false">
+  <div id="loan-stage-content" class="loan-stage-content" role="group" aria-label="Illustrative loan workflow stage">
+    <section class="loan-stage-panel request-record" data-stage-panel="request" aria-label="Loan request" hidden>
+      <p class="visual-eyebrow">Customer request · L-024</p>
+      <div class="request-record-main">
+        <div><span>Applicant</span><strong>Mara Santos</strong></div>
+        <div><span>Institution</span><strong>Sulong Cooperative</strong></div>
+      </div>
+      <div class="request-record-amount"><span>Requested principal</span><strong>₱12,000</strong></div>
+    </section>
+
+    <section class="loan-stage-panel review-schedule" data-stage-panel="review" aria-label="Three equal principal components" hidden>
+      <div class="visual-heading"><p class="visual-eyebrow">Reference schedule · principal only</p><strong>₱12,000</strong></div>
+      <div class="principal-components" role="img" aria-label="Three equal principal components of four thousand pesos each">
+        <div><span>01</span><strong>₱4,000</strong><small>Principal</small></div>
+        <div><span>02</span><strong>₱4,000</strong><small>Principal</small></div>
+        <div><span>03</span><strong>₱4,000</strong><small>Principal</small></div>
+      </div>
+    </section>
+
+    <section class="loan-stage-panel disbursement-record" data-stage-panel="disburse" aria-label="Balanced illustrative disbursement entries" hidden>
+      <p class="visual-eyebrow">Disbursement · L-024</p>
+      <div class="disbursement-pair">
+        <div><small>Debit</small><strong>Loan receivable</strong><span>₱12,000</span></div>
+        <div><small>Credit</small><strong>Customer deposits</strong><span>₱12,000</span></div>
+      </div>
+      <p class="disbursement-balance"><span aria-hidden="true">✓</span> Equal entries · balanced</p>
+    </section>
+
+    <section class="loan-stage-panel repayment-chart" data-stage-panel="repay" aria-label="Principal balance after each payment">
+      <p class="visual-eyebrow">Principal remaining · three equal payments</p>
+      <div class="chart-body">
+        <div class="chart-y-labels" aria-hidden="true"><span>₱12k</span><span>₱8k</span><span>₱4k</span><span>₱0</span></div>
+        <svg class="principal-graph" viewBox="0 0 480 210" role="img" aria-labelledby="loan-graph-title loan-graph-description" preserveAspectRatio="none">
+          <title id="loan-graph-title">Illustrative principal repayment schedule</title>
+          <desc id="loan-graph-description">The principal balance falls from twelve thousand pesos to eight thousand after the first four-thousand-peso payment, then falls by four thousand after each of two more equal payments. Interest and fees are not modeled.</desc>
+          <path class="graph-grid" d="M4 18H476M4 74H476M4 130H476M4 186H476" />
+          <path class="graph-step-fill" d="M8 18H164V74H320V130H476V186H8Z" />
+          <path class="graph-step" d="M8 18H164V74H320V130H476V186" />
+          <circle class="graph-point" cx="8" cy="18" r="5" />
+          <circle class="graph-first-payment-ring" cx="164" cy="74" r="10" />
+          <circle class="graph-point graph-first-payment" cx="164" cy="74" r="5" />
+          <circle class="graph-point" cx="320" cy="130" r="5" />
+          <circle class="graph-point" cx="476" cy="186" r="5" />
+        </svg>
+      </div>
+      <div class="chart-x-labels" aria-hidden="true">
+        <span><strong>₱12k</strong><small>Disbursed</small></span>
+        <span class="first-payment-label"><strong>₱8k</strong><small>Payment 1</small></span>
+        <span><strong>₱4k</strong><small>Payment 2</small></span>
+        <span><strong>₱0</strong><small>Payment 3</small></span>
+      </div>
+    </section>
+  </div>
+
+  <div class="stage-controls" role="group" aria-label="Choose a lending workflow stage" hidden>
+    <button class="stage-control" type="button" data-stage-control="request" aria-pressed="false" aria-controls="loan-stage-content">Request</button>
+    <button class="stage-control" type="button" data-stage-control="review" aria-pressed="false" aria-controls="loan-stage-content">Review</button>
+    <button class="stage-control" type="button" data-stage-control="disburse" aria-pressed="false" aria-controls="loan-stage-content">Disburse</button>
+    <button class="stage-control" type="button" data-stage-control="repay" aria-pressed="true" aria-controls="loan-stage-content">Repay</button>
+  </div>
+  <p id="loan-stage-summary" class="loan-stage-summary" data-stage-summary role="status" aria-live="polite">After the first ₱4,000 principal payment, ₱8,000 remains. The ledger records debit customer deposits and credit loan receivable for ₱4,000.</p>
+</div>

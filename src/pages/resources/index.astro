@@ -1,0 +1,29 @@
+---
+import { withBase } from '../../lib/urls';
+import { getCollection } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+
+const entries = (await getCollection('resources'))
+  .filter((entry) => !entry.data.draft)
+  .sort((a, b) => a.data.order - b.data.order);
+const description = 'Short guides to Higala intended scope, planned work, and preparing for an institution or developer evaluation.';
+---
+<SiteLayout title="Resources" description={description}>
+  <section class="page-hero container">
+    <div class="page-hero-grid">
+      <div><h1>Useful context for your next step.</h1></div>
+      <div><p>These short guides explain the intended open scope, the work ahead, and questions to prepare before an evaluation.</p><div class="status-note">They describe the planned scope and are not a software release.</div></div>
+    </div>
+  </section>
+  <section class="prose-section" aria-label="Resource guides">
+    <div class="container resource-index">
+      {entries.map((entry) => (
+        <a class="resource-index-row" href={withBase(`/resources/${entry.id.replace(/\.mdx?$/, '')}`)}>
+          <small>{entry.data.category}</small>
+          <span><h2>{entry.data.title}</h2><p>{entry.data.description}</p></span>
+          <svg viewBox="0 0 22 12" aria-hidden="true"><path d="M1 6h18m-6-5 6 5-6 5" /></svg>
+        </a>
+      ))}
+    </div>
+  </section>
+</SiteLayout>

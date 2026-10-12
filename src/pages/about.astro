@@ -1,0 +1,33 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PrimaryAction from '../components/PrimaryAction.astro';
+import ArrowLink from '../components/ArrowLink.astro';
+const description = 'About Higala, its purpose of opening core banking technology to more institutions and builders, and Talino stewardship.';
+---
+<SiteLayout title="About Higala" description={description}>
+  <section class="page-hero container">
+    <div class="page-hero-grid">
+      <div><h1>Core banking technology more people can shape.</h1></div>
+      <div><p>Higala is opening core banking technology so more institutions can adapt it to their needs and more people can help improve it.</p></div>
+    </div>
+  </section>
+
+  <section class="prose-section" id="why-open" aria-labelledby="why-title">
+    <div class="container prose-grid">
+      <h2 id="why-title">Why open Higala?</h2>
+      <div class="prose-copy">
+        <p>Rural banks and cooperatives serve communities with needs of their own. Opening core banking technology gives institutions and the teams that support them more room to inspect and adapt it.</p>
+        <p>A shared platform can also give developers and banking practitioners a place to improve workflows together. Higala's intended open scope includes a ledger, staff workspace, usable reference loan engine, and customer starter.</p>
+        <p>Higala is a project stewarded by Talino. The commercial loan engine is an optional extension, and Talino's implementation, hosting, and support services have separate costs.</p>
+        <ArrowLink href="/resources/intended-open-release">Read the intended scope</ArrowLink>
+      </div>
+    </div>
+  </section>
+
+  <section class="prose-section" aria-labelledby="next-title">
+    <div class="container prose-grid">
+      <h2 id="next-title">Choose a way to take part.</h2>
+      <div class="prose-copy"><p>Institutions can prepare an evaluation around their workflows and operating needs. Developers and practitioners can review intended scope and contribute where public project channels are established.</p><div class="action-row"><PrimaryAction href="/institutions">For institutions</PrimaryAction><PrimaryAction href="/developers">For developers</PrimaryAction></div></div>
+    </div>
+  </section>
+</SiteLayout>

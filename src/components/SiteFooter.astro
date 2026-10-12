@@ -1,0 +1,24 @@
+---
+import { withBase } from '../lib/urls';
+---
+<footer class="site-footer">
+  <div class="container footer-cta">
+    <h2>Build on a foundation you can make your own.</h2>
+    <div class="action-row">
+      <a class="button button-primary" href={withBase('/institutions')}>Explore for your institution <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="button button-primary" href={withBase('/developers')}>Explore developer resources <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+  <div class="container footer-main">
+    <div class="footer-brand">
+      <a href={withBase('/')} aria-label="Higala home"><img src={withBase('/brand/higala-logo-teal.svg')} width="158" height="42" alt="Higala" /></a>
+      <p>Open-source core banking.<br />Stewarded by Talino.</p>
+      <small>Higala</small>
+    </div>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <div><a href={withBase('/platform')}>Platform</a><a href={withBase('/institutions')}>For institutions</a><a href={withBase('/developers')}>Developers</a></div>
+      <div><a href={withBase('/community')}>Community</a><a href={withBase('/resources')}>Resources</a><a href={withBase('/roadmap')}>Roadmap</a></div>
+      <div><a href={withBase('/about')}>About Higala</a><a href={withBase('/support')}>Support</a><a href="https://talino.pages.dev/" target="_blank" rel="noreferrer">Talino <span class="external-mark" aria-hidden="true">↗</span></a></div>
+    </nav>
+  </div>
+</footer>
